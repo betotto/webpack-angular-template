@@ -7,9 +7,9 @@
     "copy-html": "find src -name '*.html' | cpio -updm dist",
     "delete-src": "rm -rf dist/modules && mv dist/src/modules dist && rm -rf dist/src",
     "copy-templates": "yarn run copy-html && yarn run delete-src",
-    "build-angular": "node_modules/.bin/webpack --config webpack.conf.angular.js",
+    "build-angular": "webpack --config webpack.conf.angular.js",
     "build": "yarn run copy-templates && yarn run build-app",
-    "build-app": "node_modules/.bin/webpack --config webpack.conf.js"
+    "build-app": "webpack --config webpack.conf.js"
   },
   "author": "betotto",
   "license": "MIT",
